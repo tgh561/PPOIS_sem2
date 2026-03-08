@@ -1,0 +1,2 @@
+# Hall module
+# TODO: implement

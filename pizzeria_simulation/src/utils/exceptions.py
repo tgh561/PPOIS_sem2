@@ -1,0 +1,2 @@
+# Exceptions module
+# TODO: implement

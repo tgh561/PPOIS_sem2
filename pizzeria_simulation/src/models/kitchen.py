@@ -1,0 +1,2 @@
+# Kitchen module
+# TODO: implement
