@@ -1,2 +1,0 @@
-# Customer module
-# TODO: implement

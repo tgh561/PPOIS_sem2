@@ -1,6 +1,6 @@
-# Точка входа в приложение
-from src.cli.main_cli import run_cli
-
+#!/usr/bin/env python3
+"""Пиццерия симулятор — точка входа."""
+from src.cli.main_cli import main
 
 if __name__ == "__main__":
-    run_cli()
+    main()

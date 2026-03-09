@@ -1,5 +1,167 @@
 @startuml
+' Класс-диаграмма пиццерии
 
-' TODO: add diagram content
+package "Модели" {
+  class Order {
+    +id: int
+    +type: OrderType
+    +customer_phone: str | None
+    +table_id: int | None
+    +delivery_address: str | None
+    +items: list[OrderItem]
+    +status: OrderStatus
+    +created_at: str
+    +estimated_ready_time: str | None
+    +total_price: float
+    +tips_amount: float
+    +delivery_started_at: str | None
+    +delivery_ticks: int
+  }
+
+  class OrderItem {
+    +id: int
+    +menu_item_id: int
+    +quantity: int
+    +unit_price: float
+    +total_price: float
+  }
+
+  class MenuItem {
+    +id: int
+    +name: str
+    +price: float
+    +is_available: bool
+    +category: str
+  }
+
+  class Payment {
+    +id: int
+    +order_id: int
+    +amount: float
+    +method: PaymentMethod
+    +paid_at: str
+    +success: bool
+  }
+
+  class Employee {
+    +id: int
+    +name: str
+    +role: EmployeeRole
+    +base_salary: float
+    +tips: float
+  }
+
+  class Table {
+    +id: int
+    +capacity: int
+    +is_occupied: bool
+  }
+
+  class Kitchen {
+    +orders_in_queue: list[int]
+    +orders_cooking: list[int]
+    +orders_baked: list[int]
+  }
+
+  class PizzeriaState {
+    +next_id: int
+    +orders: list[Order]
+    +payments: list[Payment]
+    +order_desk: OrderDesk
+    +dining_hall: DiningHall
+    +staff_team: StaffTeam
+    +kitchen: Kitchen
+    +finance: CompanyFinance
+  }
+}
+
+package "Перечисления" {
+  class OrderType {
+    ON_SITE
+    DELIVERY
+  }
+
+  class OrderStatus {
+    CREATED
+    IN_QUEUE
+    COOKING
+    READY
+    SERVED
+    OUT_FOR_DELIVERY
+    DELIVERING
+    PAID
+    COMPLETED
+    CANCELLED
+  }
+
+  class PaymentMethod {
+    CASH
+    CARD
+  }
+
+  class EmployeeRole {
+    COOK
+    WAITER
+    COURIER
+    CASHIER
+    ACCOUNTANT
+  }
+}
+
+package "Команды" {
+  class OrderCommands {
+    +handle_orders_menu()
+    +create_on_site_order()
+    +create_delivery_order()
+    +show_active_orders()
+    +serve_order()
+    +start_delivery()
+    +complete_order()
+  }
+
+  class KitchenCommands {
+    +handle_kitchen_menu()
+    +take_next_order_to_cooking()
+    +simulate_cooking_time()
+    +simulate_delivery_tick()
+    +show_orders_in_queue()
+    +show_orders_cooking()
+    +show_orders_baked()
+  }
+
+  class PaymentCommands {
+    +handle_payments_menu()
+    +process_cash_payment()
+    +process_card_payment()
+    +add_tips()
+    +show_payment_history()
+    +show_finance_report()
+  }
+}
+
+package "Меню" {
+  class MenuData {
+    +PIZZA_RECIPES: dict
+    +DRINKS: dict
+    +OTHER_ITEMS: dict
+    +create_menu_items()
+    +print_grouped_menu()
+    +show_pizza_details()
+  }
+}
+
+' Связи
+Order "1" *-- "many" OrderItem
+PizzeriaState "1" *-- "many" Order
+PizzeriaState "1" *-- "many" Payment
+PizzeriaState "1" *-- "1" OrderDesk
+PizzeriaState "1" *-- "1" DiningHall
+PizzeriaState "1" *-- "1" StaffTeam
+PizzeriaState "1" *-- "1" Kitchen
+
+OrderCommands --> PizzeriaState
+KitchenCommands --> PizzeriaState
+PaymentCommands --> PizzeriaState
+MenuData --> MenuItem
 
 @enduml

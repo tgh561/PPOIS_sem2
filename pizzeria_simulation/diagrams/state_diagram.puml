@@ -1,5 +1,54 @@
 @startuml
+' Диаграмма состояний пиццерии
 
-' TODO: add diagram content
+[*] --> CREATED : Создание заказа
+
+state "Заказ на месте" as onsite {
+  CREATED : Заказ создан
+  CREATED : Столик занят
+  
+  state "Кухня" as kitchen_onsite {
+    CREATED --> IN_QUEUE : Взять на кухню
+    IN_QUEUE --> COOKING : Начать готовку
+    COOKING --> READY : Готов (авто)
+  }
+  
+  READY --> SERVED : Подать к столику
+  SERVED --> PAID : Клиент оплачивает
+  PAID --> COMPLETED : Гость ушёл
+  COMPLETED --> [*] : Столик свободен
+}
+
+state "Заказ доставкой" as delivery {
+  CREATED : Заказ создан
+  CREATED : Адрес и телефон указаны
+  
+  state "Кухня" as kitchen_delivery {
+    CREATED --> IN_QUEUE : Взять на кухню
+    IN_QUEUE --> COOKING : Начать готовку
+    COOKING --> READY : Готов (авто)
+  }
+  
+  READY --> OUT_FOR_DELIVERY : Начать доставку
+  OUT_FOR_DELIVERY --> DELIVERING : Симуляция (тик 1/3)
+  DELIVERING --> DELIVERING : Симуляция (тик 2/3)
+  DELIVERING --> PAID : Клиент оплачивает (тик 3/3)
+  PAID --> COMPLETED : Заказ доставлен
+  COMPLETED --> [*]
+}
+
+state "Отмена" as cancelled {
+  CANCELLED : Заказ отменён
+}
+
+CREATED --> CANCELLED : Отмена
+IN_QUEUE --> CANCELLED : Отмена
+COOKING --> CANCELLED : Отмена
+READY --> CANCELLED : Отмена
+SERVED --> CANCELLED : Отмена (с возвратом)
+OUT_FOR_DELIVERY --> CANCELLED : Отмена (с возвратом)
+PAID --> CANCELLED : Отмена (с возвратом)
+
+cancelled --> [*]
 
 @enduml
