@@ -1,0 +1,356 @@
+{
+  "kitchen": {
+    "ovens": [
+      {
+        "id": 1,
+        "capacity": 3,
+        "is_operational": true,
+        "baking": [],
+        "queue": []
+      },
+      {
+        "id": 2,
+        "capacity": 2,
+        "is_operational": true,
+        "baking": [],
+        "queue": []
+      }
+    ],
+    "stock": {
+      "ingredients": {
+        "тесто": 44.0,
+        "томатный_соус": 18.800000000000004,
+        "моцарелла": 18.800000000000004,
+        "базилик": 9.749999999999996,
+        "пепперони": 15.0,
+        "грибы": 14.85,
+        "перец": 11.9,
+        "оливки": 11.9
+      },
+      "pizza_boxes": 94,
+      "receipt_paper_rolls": 20
+    },
+    "preparation_table_capacity": 4
+  },
+  "hall": {
+    "tables": [
+      {
+        "number": 1,
+        "capacity": 2,
+        "is_occupied": false,
+        "order_id": null
+      },
+      {
+        "number": 2,
+        "capacity": 4,
+        "is_occupied": false,
+        "order_id": null
+      },
+      {
+        "number": 3,
+        "capacity": 4,
+        "is_occupied": false,
+        "order_id": null
+      },
+      {
+        "number": 4,
+        "capacity": 6,
+        "is_occupied": false,
+        "order_id": null
+      }
+    ]
+  },
+  "order_counter": {
+    "menu": {
+      "items": [
+        {
+          "id": 1,
+          "name": "Маргарита",
+          "category": "pizza",
+          "price": 9.5,
+          "toppings": [
+            "моцарелла",
+            "базилик",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "базилик": 0.05
+          },
+          "is_available": true
+        },
+        {
+          "id": 2,
+          "name": "Пепперони",
+          "category": "pizza",
+          "price": 11.0,
+          "toppings": [
+            "пепперони",
+            "моцарелла",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "пепперони": 0.2
+          },
+          "is_available": true
+        },
+        {
+          "id": 3,
+          "name": "Вегетарианская",
+          "category": "pizza",
+          "price": 10.5,
+          "toppings": [
+            "грибы",
+            "перец",
+            "оливки"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "грибы": 0.15,
+            "перец": 0.1,
+            "оливки": 0.1
+          },
+          "is_available": true
+        },
+        {
+          "id": 101,
+          "name": "Кола",
+          "category": "drink",
+          "price": 2.5,
+          "toppings": [],
+          "ingredient_requirements": {},
+          "is_available": true
+        },
+        {
+          "id": 102,
+          "name": "Вода",
+          "category": "drink",
+          "price": 1.8,
+          "toppings": [],
+          "ingredient_requirements": {},
+          "is_available": true
+        }
+      ]
+    },
+    "payment_system": {
+      "card_terminal": {
+        "is_operational": true,
+        "is_connected": true,
+        "has_receipt_paper": true
+      },
+      "cash_desk": {
+        "cash_amount": 325.0,
+        "has_receipt_paper": true
+      }
+    }
+  },
+  "delivery": {
+    "tasks": []
+  },
+  "employees": [
+    {
+      "id": 1,
+      "name": "Анна Повар",
+      "role": "cook",
+      "salary": 1200.0,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Иван Курьер",
+      "role": "courier",
+      "salary": 900.0,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Мария Кассир",
+      "role": "cashier",
+      "salary": 850.0,
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Олег Менеджер",
+      "role": "manager",
+      "salary": 1500.0,
+      "active": true
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "pizzas": [
+        {
+          "id": 1,
+          "name": "Маргарита",
+          "size": "medium",
+          "toppings": [
+            "моцарелла",
+            "базилик",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "базилик": 0.05
+          },
+          "base_price": 9.5,
+          "status": "ready",
+          "remaining_cooking_time": 0
+        }
+      ],
+      "status": "completed",
+      "customer_type": "dine_in",
+      "table_number": 1,
+      "delivery_address": null,
+      "delivery_phone": null,
+      "payment_type": "card",
+      "total_price": 9.5,
+      "creation_time": "2026-03-10T01:38:34",
+      "assigned_cook": 1,
+      "assigned_courier": null,
+      "is_paid": true
+    },
+    {
+      "id": 2,
+      "pizzas": [
+        {
+          "id": 2,
+          "name": "Маргарита",
+          "size": "medium",
+          "toppings": [
+            "моцарелла",
+            "базилик",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "базилик": 0.05
+          },
+          "base_price": 9.5,
+          "status": "ready",
+          "remaining_cooking_time": 0
+        },
+        {
+          "id": 3,
+          "name": "Маргарита",
+          "size": "medium",
+          "toppings": [
+            "моцарелла",
+            "базилик",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "базилик": 0.05
+          },
+          "base_price": 9.5,
+          "status": "ready",
+          "remaining_cooking_time": 0
+        },
+        {
+          "id": 4,
+          "name": "Маргарита",
+          "size": "medium",
+          "toppings": [
+            "моцарелла",
+            "базилик",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "базилик": 0.05
+          },
+          "base_price": 9.5,
+          "status": "ready",
+          "remaining_cooking_time": 0
+        }
+      ],
+      "status": "completed",
+      "customer_type": "dine_in",
+      "table_number": 4,
+      "delivery_address": null,
+      "delivery_phone": null,
+      "payment_type": "card",
+      "total_price": 28.5,
+      "creation_time": "2026-03-10T01:54:49",
+      "assigned_cook": 1,
+      "assigned_courier": null,
+      "is_paid": true
+    },
+    {
+      "id": 3,
+      "pizzas": [
+        {
+          "id": 5,
+          "name": "Маргарита",
+          "size": "large",
+          "toppings": [
+            "моцарелла",
+            "базилик",
+            "томатный соус"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "базилик": 0.05
+          },
+          "base_price": 9.5,
+          "status": "ready",
+          "remaining_cooking_time": 0
+        },
+        {
+          "id": 6,
+          "name": "Вегетарианская",
+          "size": "large",
+          "toppings": [
+            "грибы",
+            "перец",
+            "оливки"
+          ],
+          "ingredient_requirements": {
+            "тесто": 1.0,
+            "томатный_соус": 0.2,
+            "моцарелла": 0.2,
+            "грибы": 0.15,
+            "перец": 0.1,
+            "оливки": 0.1
+          },
+          "base_price": 10.5,
+          "status": "ready",
+          "remaining_cooking_time": 0
+        }
+      ],
+      "status": "completed",
+      "customer_type": "delivery",
+      "table_number": null,
+      "delivery_address": "1,3",
+      "delivery_phone": "43567534",
+      "payment_type": "cash",
+      "total_price": 25.0,
+      "creation_time": "2026-03-10T01:57:33",
+      "assigned_cook": 1,
+      "assigned_courier": 2,
+      "is_paid": true
+    }
+  ],
+  "next_order_id": 4,
+  "next_pizza_id": 7,
+  "revenue": 63.0
+}
