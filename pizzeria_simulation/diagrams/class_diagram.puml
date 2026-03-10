@@ -1,167 +1,131 @@
 @startuml
-' Класс-диаграмма пиццерии
+' Диаграмма классов симулятора пиццерии
 
-package "Модели" {
-  class Order {
+package "Домен" {
+  class "Пиццерия (Pizzeria)" as Pizzeria {
+    +kitchen: Kitchen
+    +hall: Hall
+    +order_counter: OrderCounter
+    +delivery: DeliveryCoordinator
+    +employees: list[Employee]
+    +orders: list[Order]
+    +revenue: float
+  }
+
+  class "Заказ (Order)" as Order {
     +id: int
-    +type: OrderType
-    +customer_phone: str | None
-    +table_id: int | None
-    +delivery_address: str | None
-    +items: list[OrderItem]
     +status: OrderStatus
-    +created_at: str
-    +estimated_ready_time: str | None
-    +total_price: float
-    +tips_amount: float
-    +delivery_started_at: str | None
-    +delivery_ticks: int
-  }
-
-  class OrderItem {
-    +id: int
-    +menu_item_id: int
-    +quantity: int
-    +unit_price: float
+    +customer_type: CustomerType
+    +payment_type: PaymentType
+    +is_paid: bool
     +total_price: float
   }
 
-  class MenuItem {
+  class "Пицца (Pizza)" as Pizza {
     +id: int
     +name: str
+    +size: PizzaSize
+    +status: PizzaStatus
     +price: float
-    +is_available: bool
-    +category: str
   }
 
-  class Payment {
+  class "Кухня (Kitchen)" as Kitchen {
+    +ovens: list[Oven]
+    +stock: Stock
+  }
+
+  class "Печь (Oven)" as Oven {
     +id: int
-    +order_id: int
-    +amount: float
-    +method: PaymentMethod
-    +paid_at: str
-    +success: bool
+    +capacity: int
+    +is_operational: bool
+    +baking: list[BakingTask]
+    +queue: list[BakingTask]
   }
 
-  class Employee {
+  class "Склад (Stock)" as Stock {
+    +ingredients: dict[str, float]
+    +pizza_boxes: int
+    +receipt_paper_rolls: int
+  }
+
+  class "Зал (Hall)" as Hall {
+    +tables: list[Table]
+  }
+
+  class "Столик (Table)" as Table {
+    +number: int
+    +capacity: int
+    +is_occupied: bool
+    +order_id: int?
+  }
+
+  class "Стойка заказов (OrderCounter)" as OrderCounter {
+    +menu: Menu
+    +payment_system: PaymentSystem
+  }
+
+  class "Меню (Menu)" as Menu {
+    +items: dict[int, MenuItem]
+  }
+
+  class "Оплата (PaymentSystem)" as PaymentSystem {
+    +card_terminal: CardTerminal
+    +cash_desk: CashDesk
+  }
+
+  class "Доставка (DeliveryCoordinator)" as DeliveryCoordinator {
+    +tasks: dict[int, DeliveryTask]
+  }
+
+  class "Сотрудник (Employee)" as Employee {
     +id: int
     +name: str
     +role: EmployeeRole
-    +base_salary: float
-    +tips: float
+    +salary: float
+    +active: bool
   }
 
-  class Table {
-    +id: int
-    +capacity: int
-    +is_occupied: bool
-  }
-
-  class Kitchen {
-    +orders_in_queue: list[int]
-    +orders_cooking: list[int]
-    +orders_baked: list[int]
-  }
-
-  class PizzeriaState {
-    +next_id: int
-    +orders: list[Order]
-    +payments: list[Payment]
-    +order_desk: OrderDesk
-    +dining_hall: DiningHall
-    +staff_team: StaffTeam
-    +kitchen: Kitchen
-    +finance: CompanyFinance
-  }
+  class Cook
+  class Courier
+  class Cashier
+  class Manager
 }
 
-package "Перечисления" {
-  class OrderType {
-    ON_SITE
-    DELIVERY
-  }
-
-  class OrderStatus {
-    CREATED
-    IN_QUEUE
-    COOKING
-    READY
-    SERVED
-    OUT_FOR_DELIVERY
-    DELIVERING
-    PAID
-    COMPLETED
-    CANCELLED
-  }
-
-  class PaymentMethod {
-    CASH
-    CARD
-  }
-
-  class EmployeeRole {
-    COOK
-    WAITER
-    COURIER
-    CASHIER
-    ACCOUNTANT
-  }
+package "Прикладной слой" {
+  class PizzeriaService
 }
 
-package "Команды" {
-  class OrderCommands {
-    +handle_orders_menu()
-    +create_on_site_order()
-    +create_delivery_order()
-    +show_active_orders()
-    +serve_order()
-    +start_delivery()
-    +complete_order()
-  }
-
-  class KitchenCommands {
-    +handle_kitchen_menu()
-    +take_next_order_to_cooking()
-    +simulate_cooking_time()
-    +simulate_delivery_tick()
-    +show_orders_in_queue()
-    +show_orders_cooking()
-    +show_orders_baked()
-  }
-
-  class PaymentCommands {
-    +handle_payments_menu()
-    +process_cash_payment()
-    +process_card_payment()
-    +add_tips()
-    +show_payment_history()
-    +show_finance_report()
-  }
+package "Инфраструктура" {
+  class JsonStateRepository
 }
 
-package "Меню" {
-  class MenuData {
-    +PIZZA_RECIPES: dict
-    +DRINKS: dict
-    +OTHER_ITEMS: dict
-    +create_menu_items()
-    +print_grouped_menu()
-    +show_pizza_details()
-  }
+package "Интерфейс" {
+  class CliApp
 }
 
-' Связи
-Order "1" *-- "many" OrderItem
-PizzeriaState "1" *-- "many" Order
-PizzeriaState "1" *-- "many" Payment
-PizzeriaState "1" *-- "1" OrderDesk
-PizzeriaState "1" *-- "1" DiningHall
-PizzeriaState "1" *-- "1" StaffTeam
-PizzeriaState "1" *-- "1" Kitchen
+Pizzeria *-- Kitchen
+Pizzeria *-- Hall
+Pizzeria *-- OrderCounter
+Pizzeria *-- DeliveryCoordinator
+Pizzeria *-- "много" Order
+Pizzeria *-- "много" Employee
 
-OrderCommands --> PizzeriaState
-KitchenCommands --> PizzeriaState
-PaymentCommands --> PizzeriaState
-MenuData --> MenuItem
+Order *-- "много" Pizza
+Kitchen *-- "много" Oven
+Kitchen *-- Stock
+Hall *-- "много" Table
+OrderCounter *-- Menu
+OrderCounter *-- PaymentSystem
+PaymentSystem *-- CardTerminal
+PaymentSystem *-- CashDesk
+DeliveryCoordinator *-- "много" DeliveryTask
 
+Cook --|> Employee
+Courier --|> Employee
+Cashier --|> Employee
+Manager --|> Employee
+
+PizzeriaService --> Pizzeria
+JsonStateRepository --> Pizzeria
+CliApp --> PizzeriaService
 @enduml

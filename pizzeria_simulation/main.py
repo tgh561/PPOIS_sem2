@@ -1,6 +1,14 @@
-#!/usr/bin/env python3
-"""Пиццерия симулятор — точка входа."""
-from src.cli.main_cli import main
+"""Entry point for pizzeria simulator."""
+from pathlib import Path
+import sys
+
+PROJECT_ROOT = Path(__file__).parent
+SRC_ROOT = PROJECT_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from pizzeria.bootstrap import run_cli
+
 
 if __name__ == "__main__":
-    main()
+    run_cli(Path("data/state.json"))

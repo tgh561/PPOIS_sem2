@@ -1,62 +1,20 @@
-# Дизайн проекта
+# Архитектура
 
-## Архитектура
+## Слои
 
-Проект следует паттерну **Model-Service-CLI**:
+1. Доменный слой (`Domain`)
+- чистые бизнес-сущности (`Order`, `Pizza`, `Kitchen`, `Oven`, `Stock`, `Pizzeria`)
+- перечисления и доменные исключения
 
-### Models (Модели)
-- Чистые данные (dataclasses)
-- Без бизнес-логики
-- Сериализация в JSON
+2. Прикладной слой (`Application`)
+- `PizzeriaService` оркестрирует сценарии для интерфейса
 
-### Services (Сервисы)
-- Бизнес-логика
-- Операции над моделями
-- Исключения при ошибках
+3. Инфраструктурный слой (`Infrastructure`)
+- `JsonStateRepository` сохраняет и восстанавливает состояние агрегата
 
-### CLI (Команды)
-- Пользовательский интерфейс
-- Ввод/вывод
-- Делегирование сервисам
+4. Интерфейсный слой (`Interface`)
+- `CliApp` реализует пользовательский CLI-цикл
 
-## Модульная структура
+## Центральный агрегат
 
-### enums/
-Все перечисления вынесены в отдельный модуль:
-- `OrderType`, `OrderStatus` — заказы
-- `EmployeeRole` — сотрудники
-- `PaymentMethod` — платежи
-- `PizzaBase`, `ToppingCategory` — пицца
-
-### commands/
-Команды для каждого меню:
-- `order_commands` — управление заказами
-- `kitchen_commands` — кухня
-- `payment_commands` — платежи
-- `hall_commands` — зал
-- `finance_commands` — финансы
-- `staff_commands` — персонал
-- `system_commands` — статус системы
-
-### services/
-Бизнес-логика:
-- `OrderService` — CRUD заказов
-- `SimulationService` — симуляция времени
-- `AccountingService` — финансы и платежи
-- `DeliveryService` — доставка
-
-## Сериализация
-
-JSON сериализация реализована в `utils/storage.py`:
-- `state_to_dict()` — конвертация в словарь
-- `dict_to_state()` — восстановление из словаря
-- Поддержка enum через `.value`
-
-## Исключения
-
-Иерархия исключений в `utils/exceptions.py`:
-- `PizzeriaError` — базовое
-- `OrderNotFoundError` — заказ не найден
-- `TableNotFoundError` — столик не найден
-- `PaymentError` — ошибка оплаты
-- `MenuItemNotFoundError` — позиция меню не найдена
+`Pizzeria` — корневой агрегат и центральный координатор системы.
