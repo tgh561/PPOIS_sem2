@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tournaments>
+  <tournament name="Теннис: Кубок Северной лиги 2023 — этап 1" event_date="2024-01-12" sport="Теннис" winner="Александр Козлов" prize="25000.0" earning="15000.0"/>
+  <tournament name="Футбол: Кубок Северной лиги 2023 — этап 2" event_date="2024-01-24" sport="Футбол" winner="Мария Морозова" prize="45750.5" earning="27450.3"/>
+  <tournament name="Хоккей: Кубок Северной лиги 2023 — этап 3" event_date="2024-02-05" sport="Хоккей" winner="Иван Орлов" prize="66501.0" earning="39900.6"/>
+  <tournament name="Лёгкая атлетика: Кубок Северной лиги 2023 — этап 4" event_date="2024-02-17" sport="Лёгкая атлетика" winner="Елена Васильева" prize="87251.5" earning="52350.9"/>
+  <tournament name="Шахматы: Кубок Северной лиги 2023 — этап 5" event_date="2024-02-29" sport="Шахматы" winner="Дмитрий Волков" prize="108002.0" earning="64801.2"/>
+  <tournament name="Дзюдо: Кубок Северной лиги 2023 — этап 6" event_date="2024-03-07" sport="Дзюдо" winner="Анна Новикова" prize="128752.5" earning="77251.5"/>
+  <tournament name="Баскетбол: Кубок Северной лиги 2023 — этап 7" event_date="2024-03-19" sport="Баскетбол" winner="Сергей Смирнов" prize="149503.0" earning="89701.8"/>
+  <tournament name="Парусный спорт: Кубок Северной лиги 2023 — этап 8" event_date="2024-03-31" sport="Парусный спорт" winner="Ольга Соколова" prize="147500.0" earning="88500.0"/>
+  <tournament name="Велоспорт: Кубок Северной лиги 2023 — этап 9" event_date="2024-04-12" sport="Велоспорт" winner="Николай Лебедев" prize="168250.5" earning="100950.3"/>
+  <tournament name="Плавание: Кубок Северной лиги 2023 — этап 10" event_date="2024-04-24" sport="Плавание" winner="Татьяна Кузнецова" prize="189001.0" earning="113400.6"/>
+  <tournament name="Теннис: Кубок Северной лиги 2023 — этап 11" event_date="2024-05-01" sport="Теннис" winner="Александр Козлов" prize="209751.5" earning="125850.9"/>
+  <tournament name="Футбол: Кубок Северной лиги 2023 — этап 12" event_date="2024-05-13" sport="Футбол" winner="Мария Морозова" prize="230502.0" earning="138301.2"/>
+  <tournament name="Хоккей: Кубок Северной лиги 2024 — этап 13" event_date="2024-05-25" sport="Хоккей" winner="Иван Орлов" prize="251252.5" earning="150751.5"/>
+  <tournament name="Лёгкая атлетика: Кубок Северной лиги 2024 — этап 14" event_date="2024-06-06" sport="Лёгкая атлетика" winner="Елена Васильева" prize="272003.0" earning="163201.8"/>
+  <tournament name="Шахматы: Кубок Северной лиги 2024 — этап 15" event_date="2024-06-18" sport="Шахматы" winner="Дмитрий Волков" prize="270000.0" earning="162000.0"/>
+  <tournament name="Дзюдо: Кубок Северной лиги 2024 — этап 16" event_date="2024-06-25" sport="Дзюдо" winner="Анна Новикова" prize="290750.5" earning="174450.3"/>
+  <tournament name="Баскетбол: Кубок Северной лиги 2024 — этап 17" event_date="2024-07-07" sport="Баскетбол" winner="Сергей Смирнов" prize="311501.0" earning="186900.6"/>
+  <tournament name="Парусный спорт: Кубок Северной лиги 2024 — этап 18" event_date="2024-07-19" sport="Парусный спорт" winner="Ольга Соколова" prize="332251.5" earning="199350.9"/>
+  <tournament name="Велоспорт: Кубок Северной лиги 2024 — этап 19" event_date="2024-07-31" sport="Велоспорт" winner="Николай Лебедев" prize="353002.0" earning="211801.2"/>
+  <tournament name="Плавание: Кубок Северной лиги 2024 — этап 20" event_date="2024-08-12" sport="Плавание" winner="Татьяна Кузнецова" prize="373752.5" earning="224251.5"/>
+  <tournament name="Теннис: Кубок Северной лиги 2024 — этап 21" event_date="2024-08-19" sport="Теннис" winner="Александр Козлов" prize="394503.0" earning="236701.8"/>
+  <tournament name="Футбол: Кубок Северной лиги 2024 — этап 22" event_date="2024-08-31" sport="Футбол" winner="Мария Морозова" prize="392500.0" earning="235500.0"/>
+  <tournament name="Хоккей: Кубок Северной лиги 2024 — этап 23" event_date="2024-09-12" sport="Хоккей" winner="Иван Орлов" prize="413250.5" earning="247950.3"/>
+  <tournament name="Лёгкая атлетика: Кубок Северной лиги 2024 — этап 24" event_date="2024-09-24" sport="Лёгкая атлетика" winner="Елена Васильева" prize="434001.0" earning="260400.6"/>
+  <tournament name="Шахматы: Кубок Северной лиги 2025 — этап 25" event_date="2024-10-06" sport="Шахматы" winner="Дмитрий Волков" prize="454751.5" earning="272850.9"/>
+  <tournament name="Дзюдо: Кубок Северной лиги 2025 — этап 26" event_date="2024-10-13" sport="Дзюдо" winner="Анна Новикова" prize="475502.0" earning="285301.2"/>
+  <tournament name="Баскетбол: Кубок Северной лиги 2025 — этап 27" event_date="2024-10-25" sport="Баскетбол" winner="Сергей Смирнов" prize="496252.5" earning="297751.5"/>
+  <tournament name="Парусный спорт: Кубок Северной лиги 2025 — этап 28" event_date="2024-11-06" sport="Парусный спорт" winner="Ольга Соколова" prize="517003.0" earning="310201.8"/>
+  <tournament name="Велоспорт: Кубок Северной лиги 2025 — этап 29" event_date="2024-11-18" sport="Велоспорт" winner="Николай Лебедев" prize="515000.0" earning="309000.0"/>
+  <tournament name="Плавание: Кубок Северной лиги 2025 — этап 30" event_date="2024-11-30" sport="Плавание" winner="Татьяна Кузнецова" prize="535750.5" earning="321450.3"/>
+  <tournament name="Теннис: Кубок Северной лиги 2025 — этап 31" event_date="2024-12-07" sport="Теннис" winner="Александр Козлов" prize="556501.0" earning="333900.6"/>
+  <tournament name="Футбол: Кубок Северной лиги 2025 — этап 32" event_date="2024-12-19" sport="Футбол" winner="Мария Морозова" prize="577251.5" earning="346350.9"/>
+  <tournament name="Хоккей: Кубок Северной лиги 2025 — этап 33" event_date="2024-12-31" sport="Хоккей" winner="Иван Орлов" prize="598002.0" earning="358801.2"/>
+  <tournament name="Лёгкая атлетика: Кубок Северной лиги 2025 — этап 34" event_date="2025-01-12" sport="Лёгкая атлетика" winner="Елена Васильева" prize="618752.5" earning="371251.5"/>
+  <tournament name="Шахматы: Кубок Северной лиги 2025 — этап 35" event_date="2025-01-24" sport="Шахматы" winner="Дмитрий Волков" prize="639503.0" earning="383701.8"/>
+  <tournament name="Дзюдо: Кубок Северной лиги 2025 — этап 36" event_date="2025-01-31" sport="Дзюдо" winner="Анна Новикова" prize="637500.0" earning="382500.0"/>
+  <tournament name="Баскетбол: Кубок Северной лиги 2026 — этап 37" event_date="2025-02-12" sport="Баскетбол" winner="Сергей Смирнов" prize="658250.5" earning="394950.3"/>
+  <tournament name="Парусный спорт: Кубок Северной лиги 2026 — этап 38" event_date="2025-02-24" sport="Парусный спорт" winner="Ольга Соколова" prize="679001.0" earning="407400.6"/>
+  <tournament name="Велоспорт: Кубок Северной лиги 2026 — этап 39" event_date="2025-03-08" sport="Велоспорт" winner="Николай Лебедев" prize="699751.5" earning="419850.9"/>
+  <tournament name="Плавание: Кубок Северной лиги 2026 — этап 40" event_date="2025-03-20" sport="Плавание" winner="Татьяна Кузнецова" prize="720502.0" earning="432301.2"/>
+  <tournament name="Теннис: Кубок Северной лиги 2026 — этап 41" event_date="2025-03-27" sport="Теннис" winner="Александр Козлов" prize="741252.5" earning="444751.5"/>
+  <tournament name="Футбол: Кубок Северной лиги 2026 — этап 42" event_date="2025-04-08" sport="Футбол" winner="Мария Морозова" prize="762003.0" earning="457201.8"/>
+  <tournament name="Хоккей: Кубок Северной лиги 2026 — этап 43" event_date="2025-04-20" sport="Хоккей" winner="Иван Орлов" prize="760000.0" earning="456000.0"/>
+  <tournament name="Лёгкая атлетика: Кубок Северной лиги 2026 — этап 44" event_date="2025-05-02" sport="Лёгкая атлетика" winner="Елена Васильева" prize="780750.5" earning="468450.3"/>
+  <tournament name="Шахматы: Кубок Северной лиги 2026 — этап 45" event_date="2025-05-14" sport="Шахматы" winner="Дмитрий Волков" prize="801501.0" earning="480900.6"/>
+  <tournament name="Дзюдо: Кубок Северной лиги 2026 — этап 46" event_date="2025-05-21" sport="Дзюдо" winner="Анна Новикова" prize="822251.5" earning="493350.9"/>
+  <tournament name="Баскетбол: Кубок Северной лиги 2026 — этап 47" event_date="2025-06-02" sport="Баскетбол" winner="Сергей Смирнов" prize="843002.0" earning="505801.2"/>
+  <tournament name="Парусный спорт: Кубок Северной лиги 2026 — этап 48" event_date="2025-06-14" sport="Парусный спорт" winner="Ольга Соколова" prize="863752.5" earning="518251.5"/>
+  <tournament name="Велоспорт: Кубок Северной лиги 2027 — этап 49" event_date="2025-06-26" sport="Велоспорт" winner="Николай Лебедев" prize="884503.0" earning="530701.8"/>
+  <tournament name="Плавание: Кубок Северной лиги 2027 — этап 50" event_date="2025-07-08" sport="Плавание" winner="Татьяна Кузнецова" prize="882500.0" earning="529500.0"/>
+  <tournament name="Теннис: Кубок Северной лиги 2027 — этап 51" event_date="2025-07-15" sport="Теннис" winner="Александр Козлов" prize="903250.5" earning="541950.3"/>
+  <tournament name="Футбол: Кубок Северной лиги 2027 — этап 52" event_date="2025-07-27" sport="Футбол" winner="Мария Морозова" prize="924001.0" earning="554400.6"/>
+  <tournament name="Хоккей: Кубок Северной лиги 2027 — этап 53" event_date="2025-08-08" sport="Хоккей" winner="Иван Орлов" prize="944751.5" earning="566850.9"/>
+  <tournament name="Лёгкая атлетика: Кубок Северной лиги 2027 — этап 54" event_date="2025-08-20" sport="Лёгкая атлетика" winner="Елена Васильева" prize="965502.0" earning="579301.2"/>
+  <tournament name="Шахматы: Кубок Северной лиги 2027 — этап 55" event_date="2025-09-01" sport="Шахматы" winner="Дмитрий Волков" prize="986252.5" earning="591751.5"/>
+</tournaments>
