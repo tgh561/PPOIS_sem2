@@ -1,0 +1,129 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Order State Diagram">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- STATES -->
+        <mxCell id="start" value="" style="ellipse;shape=startState;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s1" value="Создан" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="110" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s2" value="Подтверждён" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="110" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s3" value="Подготовка" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="110" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s4" value="Выпекается" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="110" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s5" value="Готов" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="110" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s6" value="В доставке" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="110" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s7" value="Выполнен" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="50" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s8" value="Отменён" style="rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="170" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end1" value="" style="ellipse;shape=endState;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="60" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end2" value="" style="ellipse;shape=endState;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="180" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- PAYMENT -->
+        <mxCell id="pay_block" value="Флаг оплаты" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="400" height="200" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p_start" value="" style="ellipse;shape=startState;" vertex="1" parent="pay_block">
+          <mxGeometry x="20" y="70" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p1" value="Не оплачен" style="rounded=1;" vertex="1" parent="pay_block">
+          <mxGeometry x="80" y="60" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p2" value="Оплачен" style="rounded=1;" vertex="1" parent="pay_block">
+          <mxGeometry x="240" y="60" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- EDGES -->
+        <mxCell id="e1" edge="1" parent="1" source="start" target="s1" value="создание заказа" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" edge="1" parent="1" source="s1" target="s2" value="подтверждение" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" edge="1" parent="1" source="s2" target="s3" value="на кухню" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" edge="1" parent="1" source="s3" target="s4" value="в печь" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" edge="1" parent="1" source="s4" target="s5" value="готово" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" edge="1" parent="1" source="s5" target="s6" value="доставка" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7" edge="1" parent="1" source="s5" target="s7" value="зал + оплачен" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" edge="1" parent="1" source="s6" target="s7" value="доставлен + оплачен" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="c1" edge="1" parent="1" source="s1" target="s8" value="отмена" style="endArrow=classic;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c2" edge="1" parent="1" source="s2" target="s8" value="отмена" style="endArrow=classic;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c3" edge="1" parent="1" source="s3" target="s8" value="отмена" style="endArrow=classic;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c4" edge="1" parent="1" source="s4" target="s8" value="отмена" style="endArrow=classic;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="s5" target="s8" value="отмена" style="endArrow=classic;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="c6" edge="1" parent="1" source="s6" target="s8" value="отмена" style="endArrow=classic;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e_end1" edge="1" parent="1" source="s7" target="end1" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_end2" edge="1" parent="1" source="s8" target="end2" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pe1" edge="1" parent="pay_block" source="p_start" target="p1" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pe2" edge="1" parent="pay_block" source="p1" target="p2" value="оплата" style="endArrow=classic;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
