@@ -1,0 +1,55 @@
+{
+  "window": {
+    "width": 1100,
+    "height": 800,
+    "title": "Reversi"
+  },
+  "board": {
+    "cell_size": 80,
+    "offset": 80,
+    "rows": 8,
+    "columns": 8
+  },
+  "ai": {
+    "depth": 5
+  },
+  "audio": {
+    "music_volume": 0.3,
+    "sfx_volume": 0.7
+  },
+  "music": {
+    "starting_game_once": "assets/music/starting_game_once.ogg",
+    "background_music": "assets/music/background_music.ogg",
+    "win": "assets/music/winning_sound_once.ogg",
+    "lose": "assets/music/game_over_once.ogg",
+    "place_token": "assets/music/moving_piece.ogg",
+    "flip_token": "assets/music/moving_piece,ogg"
+  },
+  "online": {
+    "tcp_port": 50007,
+    "discovery_port": 50008,
+    "discovery_interval_ms": 700
+  },
+  "assets": {
+    "images": {
+      "white_token": "assets/WhiteToken.png",
+      "black_token": "assets/BlackToken.png",
+      "white_to_black": [
+        "assets/WhiteToBlack1.png",
+        "assets/WhiteToBlack2.png",
+        "assets/WhiteToBlack3.png"
+      ],
+      "black_to_white": [
+        "assets/BlackToWhite1.png",
+        "assets/BlackToWhite2.png",
+        "assets/BlackToWhite3.png"
+      ],
+      "board_texture": "assets/wood.png"
+    },
+    "sounds": {
+      "music": "assets/sounds/music.ogg",
+      "place_token": "assets/sounds/place.wav",
+      "flip_token": "assets/sounds/flip.wav"
+    }
+  }
+}
